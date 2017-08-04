@@ -1,26 +1,22 @@
 import os
 
-class ParseEngine:
-    def __init__(self,input_file,delimiter):
+class ParseEngine():
+    """Modular parsing engine"""
+    def __init__(self, input_file, delimiter):
+        """Init the class with input file and chosen delimiter"""
         self.inp = input_file
         self.delim = delimiter
 
-    def print_something(self):
-        print(self.delim)
-
-    def read_file(self):
+    """returns all the rows of the CSV file in an array"""
+    def get_rows(self):
         rows = []
         with open(self.inp, 'r') as f:
             for line in f:
-                print(line.split(self.delim))
+                line = line.strip()
                 rows.append(line.split(self.delim))
-        f.closed
+        
+        return rows
 
-        for line in rows:
-            print(line)
-
-
-
-    def get_map():
+    def get_map(self):
         pass
 
