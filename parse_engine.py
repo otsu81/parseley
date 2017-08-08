@@ -1,4 +1,10 @@
+from pynamo import AccountModel
+from datetime import datetime
 import os
+
+"""
+Parses a CSV file and loads it into a DynamoDB table
+"""
 
 class ParseEngine():
     """Modular parsing engine"""
@@ -17,6 +23,20 @@ class ParseEngine():
         
         return rows
 
-    def get_map(self):
-        pass
+    """
+    Loads the parsed file into a dynamoDB table, which is specified by the
+    AccountModel class
+    """
+    def load_table(self):
+        # par = ParseEngine(path, ',')
+        rows = self.inp.get_rows()
+
+        for line in rows:
+            account = AccountModel(
+                accountNbr = line[0][49:61], 
+                roleName = line[0][71:], 
+                description="Null",
+                timestamp=datetime.now()
+                )
+            account.save()
 

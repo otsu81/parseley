@@ -18,7 +18,7 @@ class AccountModel(Model):
     os.environ['AWS_SECRET_ACCESS_KEY'] = variables.get_credentials(profile).get('AWS_SECRET_ACCESS_KEY')
 
     class Meta:
-        table_name = "cms-accounts7"
+        table_name = "cms-accounts"
         region = 'eu-west-1'
 
     accountNbr = UnicodeAttribute(hash_key=True)
