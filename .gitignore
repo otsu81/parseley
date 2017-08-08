@@ -1,2 +1,6 @@
-./test.csv
-./__pycache__
+#OSX junkfiles
+*.DS_Store
+
+# local test files
+/test.csv
+__pycache__/
