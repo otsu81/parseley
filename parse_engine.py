@@ -5,8 +5,8 @@ import os
 """
 Parses a CSV file and loads it into a DynamoDB table
 """
-
 class ParseEngine():
+
     """Modular parsing engine"""
     def __init__(self, input_file, delimiter):
         """Init the class with input file and chosen delimiter"""
@@ -28,8 +28,7 @@ class ParseEngine():
     AccountModel class
     """
     def load_table(self):
-        # par = ParseEngine(path, ',')
-        rows = self.inp.get_rows()
+        rows = self.get_rows()
 
         for line in rows:
             account = AccountModel(

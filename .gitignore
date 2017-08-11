@@ -4,3 +4,8 @@
 # local test files
 /test.csv
 __pycache__/
+/experiment.py
+/ddb_loader.py
+
+# main method has some sensitive stuff...
+/main.py

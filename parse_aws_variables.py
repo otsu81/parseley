@@ -1,5 +1,5 @@
 """
-Parses an AWS credentials file and create a dictionary with 
+Parses an AWS credentials file and create a dictionary with
 K:profilename V:{AWS_ACCESS_KEY_ID;AWS_SECRET_ACCESS_KEY}
 """
 import os
@@ -7,7 +7,6 @@ import os
 class ParseAWSEnvVariables():
     
     creds = {}
-
     def __init__(self, credentials_file):
         with (open(credentials_file, 'r')) as f:
             for line in f:
